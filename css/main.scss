@@ -1,0 +1,95 @@
+/* Global Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+// Variables
+$BLACK-COLOR: black;
+$WHITE_COLOR: white;
+
+@mixin flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100vw;
+  padding: 2rem 0;
+  background-color: $BLACK-COLOR;
+  color: $WHITE_COLOR;
+}
+
+.mobile__nav {
+  @include flex-row;
+  width: 100%;
+
+  &--menu {
+    width: 5%;
+    justify-self: flex-start;
+    @include flex-row;
+    margin: 1rem;
+
+    &-box {
+      display: inline-block;
+      background-color: $WHITE-COLOR;
+      width: 2rem;
+      height: 3px;
+      position: relative;
+      transition: .3 all ease-in-out;
+    }
+
+    &-box::after,
+    &-box::before {
+      display: block;
+      content: '';
+      position: absolute;
+      background-color: $WHITE_COLOR;
+      width: 20px;
+      height: 3px;
+      top: -6px;
+      transition: .3s all ease-in-out;
+    }
+
+    &-box::after {
+      top: 6px;
+    }
+
+    &.active &-box {
+      & {
+        background: $BLACK-COLOR;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+  &--head {
+    width: 80%;
+    text-align: center;
+  }
+}
