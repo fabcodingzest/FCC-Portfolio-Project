@@ -13,14 +13,52 @@ html {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-header {
-  width: 100vw;
-  padding: 2rem 0;
-  background-color: black;
-  color: white;
+@-webkit-keyframes moveInleft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 
-.mobile__nav {
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  width: 100vw;
+  color: white;
+  position: relative;
+}
+
+.hamburger {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,10 +69,11 @@ header {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  padding: 2rem 1rem;
+  background-color: black;
 }
 
-.mobile__nav--menu {
-  width: 5%;
+.hamburger--menu {
   justify-self: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,9 +85,10 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin: 1rem;
+  z-index: 3000;
 }
 
-.mobile__nav--menu-box {
+.hamburger--menu-box {
   display: inline-block;
   background-color: white;
   width: 2rem;
@@ -58,7 +98,7 @@ header {
   transition: .3 all ease-in-out;
 }
 
-.mobile__nav--menu-box::after, .mobile__nav--menu-box::before {
+.hamburger--menu-box::after, .hamburger--menu-box::before {
   display: block;
   content: '';
   position: absolute;
@@ -70,28 +110,96 @@ header {
   transition: .3s all ease-in-out;
 }
 
-.mobile__nav--menu-box::after {
+.hamburger--menu-box::after {
   top: 6px;
 }
 
-.mobile__nav--menu.active .mobile__nav--menu-box {
+.hamburger--menu.active .hamburger--menu-box {
   background: black;
 }
 
-.mobile__nav--menu.active .mobile__nav--menu-box::before {
-  top: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.mobile__nav--menu.active .mobile__nav--menu-box::after {
+.hamburger--menu.active .hamburger--menu-box::before {
   top: 0;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
 }
 
-.mobile__nav--head {
+.hamburger--menu.active .hamburger--menu-box::after {
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.hamburger--head {
   width: 80%;
+  text-align: start;
+  z-index: 1000;
+}
+
+.mobile__nav--list {
+  background-image: linear-gradient(60deg, transparent 0%, transparent 50%, black 50%);
+  background-size: 320%;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  opacity: 0;
+  left: 100%;
+  z-index: 200;
+}
+
+.mobile__nav--list.open {
+  background-position: 100%;
+  opacity: .9;
+  left: 0%;
+}
+
+.mobile__nav--list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 3rem;
+  padding-top: 6.34rem;
+}
+
+.mobile__nav--list ul li {
+  list-style: none;
+  padding: 4rem;
+  color: white;
+}
+
+.mobile__nav--list ul li a,
+.mobile__nav--list ul li a:visited {
+  display: inline-block;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 230%;
+  -webkit-transition: .4s all;
+  transition: .4s all;
+}
+
+.mobile__nav--list ul li a:hover, .mobile__nav--list ul li a:active,
+.mobile__nav--list ul li a:visited:hover,
+.mobile__nav--list ul li a:visited:active {
+  background-position: 100%;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */
