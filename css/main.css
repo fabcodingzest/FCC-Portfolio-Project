@@ -52,6 +52,12 @@ html {
   overflow: hidden;
 }
 
+.container {
+  width: 95%;
+  margin: 0 auto;
+  height: 100%;
+}
+
 header {
   width: 100vw;
   color: white;
@@ -59,6 +65,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 5000;
+  background-color: black;
 }
 
 .hamburger {
@@ -73,7 +80,6 @@ header {
           align-items: center;
   width: 100%;
   padding: 2rem 1rem;
-  background-color: black;
   position: relative;
 }
 
@@ -264,14 +270,14 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 38%;
+  height: 44%;
 }
 
 .welcome__img img {
-  width: 70%;
+  width: 60%;
+  max-width: 30rem;
   height: auto;
   border-radius: 50%;
-  max-width: 100%;
 }
 
 .welcome__cta {
@@ -293,7 +299,7 @@ header {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 2rem;
-  height: 65%;
+  height: 60%;
 }
 
 .welcome__cta--btn, .welcome__cta--btn:visited {
@@ -314,11 +320,68 @@ header {
 
 .welcome__text {
   text-align: center;
-  height: 100%;
+  height: 50%;
 }
 
 .welcome__text h1 {
   padding: 4rem 0 1rem 0;
   font-size: 3rem;
+}
+
+.about {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.about h3 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 1rem;
+}
+
+.about__text {
+  height: 25rem;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(black));
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), black);
+  mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(black));
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), black);
+  -webkit-transition: .1s all ease-in-out;
+  transition: .1s all ease-in-out;
+  scroll-behavior: smooth;
+}
+
+.about__text p {
+  line-height: 1.6;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about__text.full-about {
+  height: 100%;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(black), to(black));
+  -webkit-mask-image: linear-gradient(to top, black, black);
+  mask-image: -webkit-gradient(linear, left bottom, left top, from(black), to(black));
+  mask-image: linear-gradient(to top, black, black);
+}
+
+.about__arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 4rem;
+  -webkit-transition: .1s all ease-in-out;
+  transition: .1s all ease-in-out;
+}
+
+.about__arrow.up-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 /*# sourceMappingURL=main.css.map */
