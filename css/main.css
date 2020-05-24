@@ -158,7 +158,7 @@ header {
 
 .mobile__nav--list.open {
   background-position: 100%;
-  opacity: 0.9;
+  opacity: 0.98;
   left: 0%;
 }
 
@@ -234,11 +234,10 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 6.3rem;
+  padding: 10rem 0 0 0;
   position: relative;
   top: 0;
   left: 0;
-  z-index: -1000;
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(120deg, #000000bb, #000000e8), url(https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=947&q=80);
@@ -246,5 +245,80 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
+  font-size: 1.8rem;
+  pointer-events: auto;
+}
+
+.welcome__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 38%;
+}
+
+.welcome__img img {
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.welcome__cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 2rem;
+  height: 65%;
+}
+
+.welcome__cta--btn, .welcome__cta--btn:visited {
+  margin-top: auto;
+  color: black;
+  border-radius: 100rem;
+  text-decoration: none;
+  padding: 2rem;
+  background: white;
+  -webkit-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+}
+
+.welcome__cta--btn:hover, .welcome__cta--btn:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.welcome__text {
+  text-align: center;
+  height: 100%;
+}
+
+.welcome__text h1 {
+  padding: 4rem 0 1rem 0;
+  font-size: 3rem;
 }
 /*# sourceMappingURL=main.css.map */
