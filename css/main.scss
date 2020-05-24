@@ -9,7 +9,8 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 // Variables
@@ -53,7 +54,10 @@ $WHITE_COLOR: white;
 header {
   width: 100vw;
   color: $WHITE_COLOR;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
 }
 
 .hamburger {
@@ -61,12 +65,13 @@ header {
   width: 100%;
   padding: 2rem 1rem;
   background-color: $BLACK-COLOR;
+  position: relative;
 
   &--menu {
     justify-self: flex-start;
     @include flex-row;
     margin: 1rem;
-    z-index: 3000;
+    z-index: 6000;
 
     &-box {
       display: inline-block;
@@ -74,7 +79,7 @@ header {
       width: 2rem;
       height: 3px;
       position: relative;
-      transition: .3 all ease-in-out;
+      transition: 0.3 all ease-in-out;
     }
 
     &-box::after,
@@ -86,7 +91,7 @@ header {
       width: 20px;
       height: 3px;
       top: -6px;
-      transition: .3s all ease-in-out;
+      transition: 0.3s all ease-in-out;
     }
 
     &-box::after {
@@ -112,29 +117,31 @@ header {
 
   &--head {
     width: 80%;
+    font-size: 2rem;
     text-align: start;
     z-index: 1000;
   }
-
 }
 
 .mobile__nav--list {
-  background-image: linear-gradient(60deg, transparent 0%, transparent 50%, $BLACK-COLOR 50%);
+  background-image: linear-gradient(60deg,
+      transparent 0%,
+      transparent 50%,
+      $BLACK-COLOR 50%);
   background-size: 320%;
-  ;
   position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;
   text-align: center;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   opacity: 0;
   left: 100%;
   z-index: 200;
 
   &.open {
     background-position: 100%;
-    opacity: .9;
+    opacity: 0.9;
     left: 0%;
   }
 
@@ -146,20 +153,27 @@ header {
 
     & li {
       list-style: none;
-      padding: 4rem;
+      padding: 2rem 4rem;
       color: $WHITE-COLOR;
+      width: 100%;
+      @include flex-row;
 
       & a,
       & a:visited {
+        border-bottom: 2px solid lightgrey;
+        min-width: 20rem;
         display: inline-block;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 1rem 2rem;
         color: $WHITE_COLOR;
         text-decoration: none;
         text-transform: uppercase;
-        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $WHITE-COLOR 50%);
+        background-image: linear-gradient(120deg,
+            transparent 0%,
+            transparent 50%,
+            $WHITE-COLOR 50%);
         background-size: 230%;
-        transition: .4s all;
+        transition: 0.4s all;
 
         &:hover,
         &:active {
@@ -167,7 +181,25 @@ header {
           color: $BLACK-COLOR;
         }
       }
-
     }
   }
+}
+
+.welcome {
+  @include flex-col;
+  margin-top: 6.3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #000000bb, #000000e8),
+    url(https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=947&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
 }

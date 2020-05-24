@@ -10,7 +10,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @-webkit-keyframes moveInleft {
@@ -55,7 +55,10 @@ html {
 header {
   width: 100vw;
   color: white;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
 }
 
 .hamburger {
@@ -71,6 +74,7 @@ header {
   width: 100%;
   padding: 2rem 1rem;
   background-color: black;
+  position: relative;
 }
 
 .hamburger--menu {
@@ -85,7 +89,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin: 1rem;
-  z-index: 3000;
+  z-index: 6000;
 }
 
 .hamburger--menu-box {
@@ -94,8 +98,8 @@ header {
   width: 2rem;
   height: 3px;
   position: relative;
-  -webkit-transition: .3 all ease-in-out;
-  transition: .3 all ease-in-out;
+  -webkit-transition: 0.3 all ease-in-out;
+  transition: 0.3 all ease-in-out;
 }
 
 .hamburger--menu-box::after, .hamburger--menu-box::before {
@@ -106,8 +110,8 @@ header {
   width: 20px;
   height: 3px;
   top: -6px;
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .hamburger--menu-box::after {
@@ -132,6 +136,7 @@ header {
 
 .hamburger--head {
   width: 80%;
+  font-size: 2rem;
   text-align: start;
   z-index: 1000;
 }
@@ -144,8 +149,8 @@ header {
   width: 100vw;
   height: 100vh;
   text-align: center;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
   opacity: 0;
   left: 100%;
   z-index: 200;
@@ -153,7 +158,7 @@ header {
 
 .mobile__nav--list.open {
   background-position: 100%;
-  opacity: .9;
+  opacity: 0.9;
   left: 0%;
 }
 
@@ -178,22 +183,34 @@ header {
 
 .mobile__nav--list ul li {
   list-style: none;
-  padding: 4rem;
+  padding: 2rem 4rem;
   color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mobile__nav--list ul li a,
 .mobile__nav--list ul li a:visited {
+  border-bottom: 2px solid lightgrey;
+  min-width: 20rem;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 1rem 2rem;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
   background-size: 230%;
-  -webkit-transition: .4s all;
-  transition: .4s all;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .mobile__nav--list ul li a:hover, .mobile__nav--list ul li a:active,
@@ -201,5 +218,33 @@ header {
 .mobile__nav--list ul li a:visited:active {
   background-position: 100%;
   color: black;
+}
+
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 6.3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #000000bb, #000000e8), url(https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=947&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */
