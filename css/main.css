@@ -11,6 +11,7 @@
 html {
   font-size: 62.5%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @-webkit-keyframes moveInleft {
@@ -45,6 +46,13 @@ html {
     -webkit-transform: translate(0);
             transform: translate(0);
   }
+}
+
+h3 {
+  font-size: 3.4rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 1rem;
 }
 
 .wrapper {
@@ -96,6 +104,12 @@ header {
           align-items: center;
   margin: 1rem;
   z-index: 6000;
+}
+
+@media only screen and (min-width: 780px) {
+  .hamburger--menu {
+    display: none;
+  }
 }
 
 .hamburger--menu-box {
@@ -253,7 +267,6 @@ header {
   background-size: cover;
   color: white;
   font-size: 1.8rem;
-  pointer-events: auto;
 }
 
 .welcome__img {
@@ -333,13 +346,6 @@ header {
   position: relative;
 }
 
-.about h3 {
-  font-size: 4rem;
-  font-weight: 300;
-  text-align: center;
-  padding: 1rem;
-}
-
 .about__text {
   height: 25rem;
   -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(black));
@@ -353,7 +359,7 @@ header {
 
 .about__text p {
   line-height: 1.6;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -383,5 +389,61 @@ header {
 .about__arrow.up-arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.contact {
+  background: black;
+  color: white;
+}
+
+.contact__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  padding: 2rem 0;
+  max-width: 53rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact__links--box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: white;
+}
+
+.contact__links--box span {
+  font-size: 1.4rem;
+  margin-top: .8rem;
+}
+
+footer {
+  background: #313131;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
