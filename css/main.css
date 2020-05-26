@@ -111,7 +111,7 @@ header {
   display: none;
 }
 
-@media only screen and (min-width: 667px) {
+@media only screen and (min-width: 1126px) {
   .hamburger__desktop--nav {
     display: block;
   }
