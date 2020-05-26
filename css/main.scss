@@ -108,7 +108,7 @@ header {
     }
 
     & ul {
-      @media only screen and (min-width: $bp-med) {
+      @media only screen and (min-width: $bp-lg) {
         @include flex-row
       }
 
@@ -132,7 +132,7 @@ header {
     margin: 1rem;
     z-index: 6000;
 
-    @media only screen and (min-width: $bp-med) {
+    @media only screen and (min-width: $bp-lg) {
       display: none;
     }
 
