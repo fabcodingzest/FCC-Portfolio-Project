@@ -5,7 +5,6 @@ $WHITE_COLOR: white;
 // breakpoints 
 $bp-med: 667px;
 $bp-lg: 1126px;
-$bp-xl: 1400px;
 
 /* Global Reset */
 *,
@@ -95,12 +94,36 @@ header {
 
 .hamburger {
   @include flex-row;
+  justify-content: space-between;
   width: 100%;
   padding: 2rem 1rem;
   position: relative;
 
-  @media only screen and (min-width: $bp-med) {
-    justify-content: space-between;
+
+  &__desktop--nav {
+    display: none;
+
+    @media only screen and (min-width: $bp-med) {
+      display: block;
+    }
+
+    & ul {
+      @media only screen and (min-width: $bp-med) {
+        @include flex-row
+      }
+
+      & li {
+        list-style: none;
+        padding: 0 2rem;
+        font-size: 2rem;
+
+        & a {
+          color: $WHITE_COLOR;
+          text-decoration: none;
+        }
+      }
+
+    }
   }
 
   &--menu {
@@ -156,7 +179,7 @@ header {
   }
 
   &--head {
-    width: 80%;
+    // width: 80%;
     font-size: 2rem;
     text-align: start;
     z-index: 1000;
@@ -352,7 +375,7 @@ header {
 
 
 .about {
-  padding: 6rem 0 3rem 0;
+  padding: 7rem 0 3rem 0;
   position: relative;
 
   &__text {
@@ -391,7 +414,7 @@ header {
 }
 
 .project {
-  padding: 6rem 0;
+  padding: 7rem 0;
   background-image:
     url(https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80);
   background-attachment: fixed;
@@ -424,7 +447,7 @@ header {
 
     @media only screen and (min-width: $bp-lg) {
       width: 45%;
-      min-height: 35rem;
+      min-height: 43.3rem;
     }
 
     &--img {
