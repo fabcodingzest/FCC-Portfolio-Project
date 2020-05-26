@@ -52,7 +52,13 @@ h3 {
   font-size: 3.4rem;
   font-weight: 300;
   text-align: center;
-  padding: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 667px) {
+  h3 {
+    font-size: 5rem;
+  }
 }
 
 .wrapper {
@@ -64,6 +70,13 @@ h3 {
   width: 95%;
   margin: 0 auto;
   height: 100%;
+}
+
+@media only screen and (min-width: 667px) {
+  .container {
+    width: 80%;
+    max-width: 112.6rem;
+  }
 }
 
 header {
@@ -91,6 +104,14 @@ header {
   position: relative;
 }
 
+@media only screen and (min-width: 667px) {
+  .hamburger {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .hamburger--menu {
   justify-self: flex-start;
   display: -webkit-box;
@@ -106,7 +127,7 @@ header {
   z-index: 6000;
 }
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 667px) {
   .hamburger--menu {
     display: none;
   }
@@ -115,7 +136,7 @@ header {
 .hamburger--menu-box {
   display: inline-block;
   background-color: white;
-  width: 2rem;
+  width: 20px;
   height: 3px;
   position: relative;
   -webkit-transition: 0.3 all ease-in-out;
@@ -161,9 +182,15 @@ header {
   z-index: 1000;
 }
 
+@media only screen and (min-width: 667px) {
+  .hamburger--head {
+    font-size: 3rem;
+  }
+}
+
 .mobile__nav--list {
   background-image: linear-gradient(60deg, transparent 0%, transparent 50%, black 50%);
-  background-size: 320%;
+  background-size: 330%;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -260,6 +287,7 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
+  max-height: 72rem;
   background-image: linear-gradient(120deg, #000000bb, #000000e8), url(https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=947&q=80);
   background-attachment: fixed;
   background-position: center;
@@ -267,6 +295,23 @@ header {
   background-size: cover;
   color: white;
   font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 667px) {
+  .welcome .welcome___container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .welcome__img {
@@ -284,13 +329,31 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 44%;
+  max-height: 25rem;
+  margin: 3rem;
+}
+
+@media only screen and (min-width: 667px) {
+  .welcome__img {
+    height: 100%;
+    width: 38%;
+  }
 }
 
 .welcome__img img {
-  width: 60%;
+  width: 80%;
   max-width: 30rem;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
+}
+
+@media only screen and (min-width: 667px) {
+  .welcome__img img {
+    max-width: 40rem;
+    width: 100%;
+  }
 }
 
 .welcome__cta {
@@ -312,18 +375,35 @@ header {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 2rem;
-  height: 60%;
+  height: 40%;
+}
+
+@media only screen and (min-width: 667px) {
+  .welcome__cta {
+    height: 0;
+  }
 }
 
 .welcome__cta--btn, .welcome__cta--btn:visited {
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: auto;
   color: black;
   border-radius: 100rem;
   text-decoration: none;
-  padding: 2rem;
+  padding: 1.4rem;
+  font-weight: 700;
   background: white;
   -webkit-transition: .2s all ease-in-out;
   transition: .2s all ease-in-out;
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width: 1126px) {
+  .welcome__cta--btn, .welcome__cta--btn:visited {
+    font-size: 2rem;
+    padding: 2.4rem;
+    font-weight: 700;
+  }
 }
 
 .welcome__cta--btn:hover, .welcome__cta--btn:active {
@@ -333,16 +413,55 @@ header {
 
 .welcome__text {
   text-align: center;
-  height: 50%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.welcome__text h1 {
-  padding: 4rem 0 1rem 0;
+@media only screen and (min-width: 667px) {
+  .welcome__text {
+    height: 100%;
+    width: 55%;
+    font-size: 3rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.welcome h1 {
+  padding-bottom: 1rem;
   font-size: 3rem;
 }
 
+@media only screen and (min-width: 667px) {
+  .welcome h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1126px) {
+  .welcome h1 {
+    font-size: 7rem;
+  }
+}
+
 .about {
-  padding: 3rem 0;
+  padding: 6rem 0 3rem 0;
   position: relative;
 }
 
@@ -363,6 +482,12 @@ header {
   margin-bottom: 1rem;
 }
 
+@media only screen and (min-width: 1126px) {
+  .about__text p {
+    font-size: 2.4rem;
+  }
+}
+
 .about__text.full-about {
   height: 100%;
   -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(black), to(black));
@@ -381,7 +506,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 4rem;
+  font-size: 3rem;
   -webkit-transition: .1s all ease-in-out;
   transition: .1s all ease-in-out;
 }
@@ -391,9 +516,128 @@ header {
           transform: rotate(180deg);
 }
 
+.project {
+  padding: 6rem 0;
+  background-image: url(https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.project h3 {
+  text-shadow: 2px 2px black;
+}
+
+@media only screen and (min-width: 1126px) {
+  .project__slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.project__tile {
+  padding: 2rem;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.534);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.534);
+  background: black;
+  color: white;
+  border-radius: 2rem;
+  width: 90%;
+  max-width: 45rem;
+  margin: 2rem auto;
+}
+
+@media only screen and (min-width: 1126px) {
+  .project__tile {
+    width: 45%;
+    min-height: 35rem;
+  }
+}
+
+.project__tile--img {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 667px) {
+  .project__tile--img {
+    min-height: 15rem;
+  }
+}
+
+.project__tile--img img {
+  max-width: 100%;
+}
+
+.project__tile--title {
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 667px) {
+  .project__tile--title {
+    font-size: 3rem;
+  }
+}
+
+.project__tile--desc {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+@media only screen and (min-width: 667px) {
+  .project__tile--desc {
+    font-size: 2rem;
+  }
+}
+
+.project__tile a {
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  background: white;
+  padding: .8rem 3rem;
+  margin-top: 1.4rem;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+.project__tile a:hover {
+  opacity: .9;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .contact {
   background: black;
   color: white;
+  padding: 6rem 0;
 }
 
 .contact__links {
@@ -406,13 +650,19 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
-  width: 90%;
+  margin: 2rem auto;
+  width: 95%;
   padding: 2rem 0;
   max-width: 53rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media only screen and (min-width: 1126px) {
+  .contact__links {
+    max-width: 70rem;
+  }
 }
 
 .contact__links--box {
@@ -429,14 +679,40 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2.4rem;
+  font-size: 2rem;
   text-decoration: none;
   color: white;
+  width: 6rem;
+  height: 5rem;
+  -webkit-transition: .2s all ease-out;
+  transition: .2s all ease-out;
+}
+
+@media only screen and (min-width: 667px) {
+  .contact__links--box {
+    width: 10rem;
+    height: 10rem;
+    font-size: 3rem;
+  }
+}
+
+.contact__links--box:hover, .contact__links--box:active {
+  background-color: white;
+  color: black;
+  border-radius: .6rem;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .contact__links--box span {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin-top: .8rem;
+}
+
+@media only screen and (min-width: 667px) {
+  .contact__links--box span {
+    font-size: 2rem;
+  }
 }
 
 footer {

@@ -8,6 +8,11 @@ menuBox.addEventListener('click', e => {
   menuBox.classList.toggle('active');
 })
 
+document.querySelectorAll('.mobile__nav--links').forEach(link => link.addEventListener('click', () => {
+  navList.classList.remove('open');
+  menuBox.classList.remove('active')
+}));
+
 arrow.addEventListener('click', e => {
   e.preventDefault();
   arrow.classList.toggle('up-arrow');

@@ -1,3 +1,12 @@
+// Variables
+$BLACK-COLOR: black;
+$WHITE_COLOR: white;
+
+// breakpoints 
+$bp-med: 667px;
+$bp-lg: 1126px;
+$bp-xl: 1400px;
+
 /* Global Reset */
 *,
 *::after,
@@ -12,11 +21,9 @@ html {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
+
 }
 
-// Variables
-$BLACK-COLOR: black;
-$WHITE_COLOR: white;
 
 @keyframes moveInleft {
   0% {
@@ -51,7 +58,12 @@ h3 {
   font-size: 3.4rem;
   font-weight: 300;
   text-align: center;
-  padding: 1rem;
+  padding-bottom: 1rem;
+
+  @media only screen and (min-width: $bp-med) {
+    font-size: 5rem;
+
+  }
 }
 
 .wrapper {
@@ -63,6 +75,11 @@ h3 {
   width: 95%;
   margin: 0 auto;
   height: 100%;
+
+  @media only screen and (min-width: $bp-med) {
+    width: 80%;
+    max-width: 112.6rem;
+  }
 }
 
 header {
@@ -73,6 +90,7 @@ header {
   width: 100%;
   z-index: 5000;
   background-color: $BLACK-COLOR;
+
 }
 
 .hamburger {
@@ -81,20 +99,24 @@ header {
   padding: 2rem 1rem;
   position: relative;
 
+  @media only screen and (min-width: $bp-med) {
+    justify-content: space-between;
+  }
+
   &--menu {
     justify-self: flex-start;
     @include flex-row;
     margin: 1rem;
     z-index: 6000;
 
-    @media only screen and (min-width: 780px) {
+    @media only screen and (min-width: $bp-med) {
       display: none;
     }
 
     &-box {
       display: inline-block;
       background-color: $WHITE-COLOR;
-      width: 2rem;
+      width: 20px;
       height: 3px;
       position: relative;
       transition: 0.3 all ease-in-out;
@@ -138,6 +160,11 @@ header {
     font-size: 2rem;
     text-align: start;
     z-index: 1000;
+
+    @media only screen and (min-width: $bp-med) {
+      font-size: 3rem;
+
+    }
   }
 }
 
@@ -146,7 +173,7 @@ header {
       transparent 0%,
       transparent 50%,
       $BLACK-COLOR 50%);
-  background-size: 320%;
+  background-size: 330%;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -212,6 +239,7 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
+  max-height: 72rem;
   background-image: linear-gradient(120deg, #000000bb, #000000e8),
     url(https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=947&q=80);
   background-attachment: fixed;
@@ -221,17 +249,35 @@ header {
   color: $WHITE_COLOR;
   font-size: 1.8rem;
 
-
+  .welcome___container {
+    @media only screen and (min-width: $bp-med) {
+      @include flex-row;
+      justify-content: space-between;
+    }
+  }
 
   &__img {
     @include flex-col;
     height: 44%;
+    max-height: 25rem;
+    margin: 3rem;
+
+    @media only screen and (min-width: $bp-med) {
+      height: 100%;
+      width: 38%;
+    }
 
     & img {
-      width: 60%;
+      width: 80%;
       max-width: 30rem;
       height: auto;
+      object-fit: cover;
       border-radius: 50%;
+
+      @media only screen and (min-width: $bp-med) {
+        max-width: 40rem;
+        width: 100%;
+      }
     }
   }
 
@@ -241,17 +287,30 @@ header {
     text-align: center;
     justify-content: flex-start;
     padding: 2rem;
-    height: 60%;
+    height: 40%;
+
+    @media only screen and (min-width: $bp-med) {
+      height: 0;
+    }
 
     &--btn,
     &--btn:visited {
+      font-family: Arial, Helvetica, sans-serif;
       margin-top: auto;
       color: $BLACK-COLOR;
       border-radius: 100rem;
       text-decoration: none;
-      padding: 2rem;
+      padding: 1.4rem;
+      font-weight: 700;
       background: $WHITE_COLOR;
       transition: .2s all ease-in-out;
+      font-size: 1.4rem;
+
+      @media only screen and (min-width: $bp-lg) {
+        font-size: 2rem;
+        padding: 2.4rem;
+        font-weight: 700;
+      }
 
     }
 
@@ -264,18 +323,36 @@ header {
 
   &__text {
     text-align: center;
-    height: 50%;
+    height: 40%;
+    @include flex-col;
+    justify-content: space-between;
 
-    & h1 {
-      padding: 4rem 0 1rem 0;
+    @media only screen and (min-width: $bp-med) {
+      height: 100%;
+      width: 55%;
       font-size: 3rem;
+      justify-content: center;
     }
   }
 
+  & h1 {
+    padding-bottom: 1rem;
+    font-size: 3rem;
+
+    @media only screen and (min-width: $bp-med) {
+      font-size: 4rem;
+    }
+
+    @media only screen and (min-width: $bp-lg) {
+      font-size: 7rem;
+    }
+
+  }
 }
 
+
 .about {
-  padding: 3rem 0;
+  padding: 6rem 0 3rem 0;
   position: relative;
 
   &__text {
@@ -289,6 +366,10 @@ header {
       line-height: 1.6;
       font-size: 1.4rem;
       margin-bottom: 1rem;
+
+      @media only screen and (min-width: $bp-lg) {
+        font-size: 2.4rem;
+      }
     }
 
     &.full-about {
@@ -300,7 +381,7 @@ header {
 
   &__arrow {
     @include flex-row;
-    font-size: 4rem;
+    font-size: 3rem;
     transition: .1s all ease-in-out;
 
     &.up-arrow {
@@ -309,27 +390,144 @@ header {
   }
 }
 
+.project {
+  padding: 6rem 0;
+  background-image:
+    url(https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $WHITE_COLOR;
+
+  & h3 {
+    text-shadow: 2px 2px rgb(0, 0, 0);
+  }
+
+  &__slides {
+    @media only screen and (min-width: $bp-lg) {
+      @include flex-row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__tile {
+    padding: 2rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.534);
+    background: $BLACK-COLOR;
+    color: $WHITE_COLOR;
+    border-radius: 2rem;
+    width: 90%;
+    max-width: 45rem;
+    margin: 2rem auto;
+
+    @media only screen and (min-width: $bp-lg) {
+      width: 45%;
+      min-height: 35rem;
+    }
+
+    &--img {
+      width: 100%;
+      @include flex-row;
+
+      @media only screen and (min-width: $bp-med) {
+        min-height: 15rem;
+      }
+
+      & img {
+        max-width: 100%;
+        // object-fit: cover;
+
+      }
+    }
+
+    &--title {
+      padding: 1rem 0;
+      font-size: 2rem;
+      font-weight: 400;
+
+      @media only screen and (min-width: $bp-med) {
+        font-size: 3rem;
+      }
+    }
+
+    &--desc {
+      font-size: 1.4rem;
+      line-height: 1.6;
+
+      @media only screen and (min-width: $bp-med) {
+        font-size: 2rem;
+      }
+    }
+
+    & a {
+      border-radius: 2rem;
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-decoration: none;
+      color: $BLACK-COLOR;
+      display: inline-block;
+      background: $WHITE_COLOR;
+      padding: .8rem 3rem;
+      margin-top: 1.4rem;
+      transition: .3s all ease-in-out;
+
+      &:hover {
+        opacity: .9;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
 .contact {
   background: $BLACK-COLOR;
   color: $WHITE_COLOR;
+  padding: 6rem 0;
 
   &__links {
     @include flex-row;
-    margin: 0 auto;
-    width: 90%;
+    margin: 2rem auto;
+    width: 95%;
     padding: 2rem 0;
     max-width: 53rem;
     justify-content: space-between;
 
+    @media only screen and (min-width: $bp-lg) {
+      max-width: 70rem;
+    }
+
     &--box {
       @include flex-col;
-      font-size: 2.4rem;
+      font-size: 2rem;
       text-decoration: none;
       color: $WHITE_COLOR;
+      width: 6rem;
+      height: 5rem;
+      transition: .2s all ease-out;
+
+      @media only screen and (min-width: $bp-med) {
+        width: 10rem;
+        height: 10rem;
+        font-size: 3rem;
+      }
+
+      &:hover,
+      &:active {
+        background-color: $WHITE-COLOR;
+        color: $BLACK-COLOR;
+        border-radius: .6rem;
+        transform: scale(1.2);
+      }
 
       & span {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         margin-top: .8rem;
+
+        @media only screen and (min-width: $bp-med) {
+          font-size: 2rem;
+        }
       }
     }
   }

@@ -32,24 +32,26 @@
       <nav id="navbar" class="mobile__nav--list">
         <ul>
           <li>
-            <a href="#About">About</a>
+            <a class="mobile__nav--links" href="#About">About</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a class="mobile__nav--links" href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#Contact">Contact</a>
+            <a class="mobile__nav--links" href="#Contact">Contact</a>
           </li>
         </ul>
       </nav>
       <section id="welcome-section" class="welcome">
-        <div class="container">
+        <div class="container welcome___container">
           <div class="welcome__img">
             <img src="/images/bitmoji.png" alt="bitmoji-avatar" />
           </div>
           <div class="welcome__text">
-            <h1>Hey, I am Fab</h1>
-            <p>A Front End Web Developer</p>
+            <div class="welcome__text--only">
+              <h1>Hey, I am Fab</h1>
+              <p>A Front End Web Developer</p>
+            </div>
             <div class="welcome__cta">
               <a class="welcome__cta--btn" href="#About">
                 Know more about me
@@ -104,8 +106,100 @@
         </div>
       </section>
       <section id="projects" class="project">
-        <div class="project-tile"></div>
-        <a href="https://codepen.io/fabcodingzest/full/ExVLVxY"></a>
+        <div class="container">
+          <h3>Projects</h3>
+          <div class="project__slides">
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img src="/images/Breeze-app.jpg" alt="My Breeze App Project" />
+              </div>
+              <h4 class="project__tile--title">Breeze Weather App</h4>
+              <p class="project__tile--desc">
+                A simple Weather App made with Vanilla JavaScript
+              </p>
+              <a target="_blank" href="https://fab-breeze.netlify.app/">Show</a>
+            </div>
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img
+                  src="/images/huddle-landing.jpg"
+                  alt="Huddle Landing Page"
+                />
+              </div>
+              <h4 class="project__tile--title">Huddle Landing Page</h4>
+              <p class="project__tile--desc">
+                A simple landing App made with just HTML and CSS.
+              </p>
+              <a target="_blank" href="https://fab-page.netlify.app/">Show</a>
+            </div>
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img
+                  src="/images/react-colors-app.jpg"
+                  alt="React Colors App"
+                />
+              </div>
+              <h4 class="project__tile--title">React Colors App</h4>
+              <p class="project__tile--desc">
+                A React Colors Palette App that helps you to make a palette and
+                copy the color directly to the clipboard.
+              </p>
+              <a
+                target="_blank"
+                href="https://fabcodingzest.github.io/colors-app/#/"
+                >Show</a
+              >
+            </div>
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img
+                  src="/images/bookmark-page.jpg"
+                  alt="Bookmark Landing Page"
+                />
+              </div>
+              <h4 class="project__tile--title">Bookmark Langing Page</h4>
+              <p class="project__tile--desc">
+                A simple Bookmark Landing Page made with just HTML, CSS and
+                JavaScript
+              </p>
+              <a
+                target="_blank"
+                href="https://fabcodingzest.github.io/Bookmark-Landing-Page/"
+                >Show</a
+              >
+            </div>
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img
+                  src="/images/form-validation.jpg"
+                  alt="JavaScript Form Validation Page"
+                />
+              </div>
+              <h4 class="project__tile--title">Form Validation Page</h4>
+              <p class="project__tile--desc">
+                A simple Form validation Page made with just HTML, CSS and
+                JavaScript.
+              </p>
+              <a target="_blank" href="https://fab-formchallenge.netlify.app/"
+                >Show</a
+              >
+            </div>
+            <div class="project__tile project-tile">
+              <div class="project__tile--img">
+                <img src="/images/Budgety.jpg" alt="Budgety App" />
+              </div>
+              <h4 class="project__tile--title">Budgety App</h4>
+              <p class="project__tile--desc">
+                A simple Budget App made with Vanilla JavaScript.
+              </p>
+              <a
+                target="_blank"
+                href="https://fab-budgetyapp.netlify.app/?_ga=2.62352812.1862421701.1568308091-520342424.1565117501"
+                >Show</a
+              >
+            </div>
+          </div>
+        </div>
       </section>
       <section id="Contact" class="contact">
         <div class="container">
