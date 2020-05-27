@@ -1,6 +1,6 @@
 const menuBox = document.querySelector('.hamburger--menu');
 const navList = document.querySelector('.mobile__nav--list');
-const arrow = document.querySelector('.about__arrow');
+const arrow = document.querySelector('.fa-chevron-circle-down');
 
 menuBox.addEventListener('click', e => {
   e.preventDefault();
@@ -15,6 +15,7 @@ document.querySelectorAll('.mobile__nav--links').forEach(link => link.addEventLi
 
 arrow.addEventListener('click', e => {
   e.preventDefault();
+  e.stopPropagation()
   arrow.classList.toggle('up-arrow');
   document.querySelector('.about__text').classList.toggle('full-about')
 } )

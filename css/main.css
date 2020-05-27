@@ -536,11 +536,14 @@ header {
       -ms-flex-align: center;
           align-items: center;
   font-size: 3rem;
+}
+
+.about__arrow .fa-chevron-circle-down {
   -webkit-transition: .1s all ease-in-out;
   transition: .1s all ease-in-out;
 }
 
-.about__arrow.up-arrow {
+.about__arrow .fa-chevron-circle-down.up-arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -618,6 +621,7 @@ header {
 
 .project__tile--img img {
   max-width: 100%;
+  border-radius: 1.4rem;
 }
 
 .project__tile--title {
