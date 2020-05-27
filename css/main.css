@@ -541,6 +541,7 @@ header {
 .about__arrow .fa-chevron-circle-down {
   -webkit-transition: .1s all ease-in-out;
   transition: .1s all ease-in-out;
+  z-index: 1000000;
 }
 
 .about__arrow .fa-chevron-circle-down.up-arrow {
