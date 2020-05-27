@@ -13,9 +13,7 @@ document.querySelectorAll('.mobile__nav--links').forEach(link => link.addEventLi
   menuBox.classList.remove('active')
 }));
 
-arrow.addEventListener('click', e => {
-  e.preventDefault();
-  e.stopPropagation()
+arrow.addEventListener('click', () => {
   arrow.classList.toggle('up-arrow');
   document.querySelector('.about__text').classList.toggle('full-about')
 } )
