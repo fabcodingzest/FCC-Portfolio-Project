@@ -408,6 +408,7 @@ header {
 
     & .fa-chevron-circle-down {
       transition: .1s all ease-in-out;
+      z-index: 1000000;
     }
 
     & .fa-chevron-circle-down.up-arrow {
